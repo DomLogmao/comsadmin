@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "agent": "Josh Perez",
+    "project": "ALVEO",
+    "developer": "Ayala Land Inc",
+    "salesDate" : "07/05/2023",
+    "value": 5000000
+  },
+  {
+    "id": 2,
+    "agent": "Josh Perez",
+    "project": "Riala",
+    "developer": "Ayala Land Inc",
+    "salesDate" : "03/05/2023",
+    "value": 3000000
+  },
+  {
+    "id": 3,
+    "agent": "Donna Marie Gonzaga",
+    "project": "Camelia Homes Mandaue",
+    "developer": "Vista Land",
+    "salesDate" : "02/12/2023",
+    "value": 3000000
+  },
+  {
+    "id": 4,
+    "agent": "Donna Marie Gonzaga",
+    "project": "Camelia Homes Mandaue",
+    "developer": "Vista Land",
+    "salesDate" : "02/01/2023",
+    "value": 3500000
+  },
+  {
+    "id": 5,
+    "agent": "Donna Marie Gonzaga",
+    "project": "ASIA PREMIER RESIDENCES",
+    "developer": "Cebu Landmasters",
+    "salesDate" : "01/30/2023",
+    "value": 2300000
+  },
+  {
+    "id": 6,
+    "agent": "Pamela Binondo",
+    "project": "Amoa",
+    "developer": "AboitizLand Inc",
+    "salesDate" : "01/07/2023",
+    "value": 1300000
+  }
+]
