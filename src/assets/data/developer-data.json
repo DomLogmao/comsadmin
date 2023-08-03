@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Ayala Land",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "customer_service@gmail.com",
+    "status": true,
+    "developerCode": "1000"
+  },
+  {
+    "id": 2,
+    "name": "Cebu Landmaster",
+    "address": "207-A Quezon Street",
+    "phone": "09775682314",
+    "email" : "customer_service@gmail.com",
+    "status": true,
+    "developerCode": "1001"
+  },
+  {
+    "id": 3,
+    "name": "Vista Land",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "developerCode": "1002"
+  }
+]

@@ -1,0 +1,13 @@
+:host ::ng-deep {
+  .table-modal-header .modal-about {
+    padding-left: 0 !important;
+  }
+}
+.table-modal-header .modal-about {
+  padding-left: 0 !important;
+}
+
+.header-buttons-left {
+  justify-content: center;
+  display: flex !important;
+}

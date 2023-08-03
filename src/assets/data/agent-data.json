@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Josh Perez",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "agentCode": "1000"
+  },
+  {
+    "id": 2,
+    "name": "Donna Marie Gonzaga",
+    "address": "207-A Quezon Street",
+    "phone": "09775682314",
+    "email" : "donna_gonzaga@gmail.com",
+    "status": true,
+    "agentCode": "1001"
+  },
+  {
+    "id": 3,
+    "name": "Pamela Binondo",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "agentCode": "1002"
+  },
+  {
+    "id": 4,
+    "name": "Timothy Brad",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "agentCode": "1003"
+  },
+  {
+    "id": 5,
+    "name": "Manny Pacman",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "agentCode": "1004"
+  },
+  {
+    "id": 6,
+    "name": "Jinkie Pacman",
+    "address": "307-A Sampaloc Street",
+    "phone": "09775689632",
+    "email" : "josh_perez@gmail.com",
+    "status": true,
+    "agentCode": "1005"
+  }
+]

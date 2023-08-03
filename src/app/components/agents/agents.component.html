@@ -1,0 +1,196 @@
+<section class="main-content">
+  <ul class="breadcrumb breadcrumb-style ">
+    <li class="breadcrumb-item">
+      <h5 class="page-title m-b-0">Agents</h5>
+    </li>
+    <li class="breadcrumb-item bcrumb-1">
+      <a routerLink="/dashboard/main">
+        <i class="fas fa-home font-17"></i></a>
+    </li>
+    <li class="breadcrumb-item">Agent List</li>
+  </ul>
+  <div class="section-body">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+      <div class="p-10">
+        <div class="row">
+        <div class="col-lg-6">
+          <div class="row m-0">
+            <div class="col-lg-8 p-0">
+              <div class="ngxTableHeader">
+                <div class="table-search-area">
+                  <div>
+                    <label for="search-input"><i class="material-icons search-icon">search</i></label>
+                    <input placeholder="Search" type="text" class="browser-default search-field"
+                      (keyup)='filterDatatable($event)' aria-label="Search box">
+                  </div>
+                </div>
+                <div class="header-buttons-left">
+                  <div class="tbl-btn-style">
+                    <button class="btn btn-icon  btn-primary " (click)='addRow(addRecord)'>
+                    Add Agent
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-12">
+
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+<ng-template #addRecord let-modal>
+  <div class="modal-header editRowModal">
+    <h4 class="modal-title" id="modal-basic-title">
+      <div class="table-modal-header">
+
+        <div class="modal-about">
+          <div class="fw-bold p-t-10 font-17">
+            New Agent</div>
+        </div>
+      </div>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true"><i class="material-icons">close</i></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addForm" (ngSubmit)="onSaveForm(addForm)">
+      <div class="input-field col s12 d-none">
+        <input formControlName="id" class="form-control" type="hidden">
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" placeholder="First name" formControlName="name"
+            required>
+          <small class="form-text text-danger"
+            *ngIf="!addForm.get('name')?.valid && addForm.get('name')?.touched"> First name is
+            required</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+          <label>Phone<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" placeholder="Phone" formControlName="phone" required>
+          <small class="form-text text-danger"
+            *ngIf="!addForm.get('phone')?.valid && addForm.get('phone')?.touched"> Phone is
+            required</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Email<span class="text-danger">*</span></label>
+          <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+          <small class="form-text text-danger"
+            *ngIf="!addForm.get('email')?.valid && addForm.get('email')?.touched"> Please enter a valid
+            email address</small>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Status <span class="text-danger">*</span></label>
+          <select class="form-select form-control" formControlName="status" required>
+            <option value="" selected disabled>Please select</option>
+            <option *ngFor="let status of statusType" [value]="status.value">
+              {{status.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <label>Address<span class="text-danger"></span></label>
+          <textarea type="textarea" class="form-control" placeholder="Address"
+            formControlName="address"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!addForm.valid">Save</button>
+        <button type="button" class="btn btn-light" (click)="modal.close()">Close</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #editRecord let-modal>
+  <div class="modal-header editRowModal">
+    <h4 class="modal-title" id="modal-basic-title">
+      <div class="table-modal-header">
+        <!-- <img [src]='selectedRowData!.img' alt="avatar"> -->
+        <div class="modal-about">
+          <div class="fw-bold p-t-10 font-17">
+            {{selectedRowData!.name}}
+            {{selectedRowData!.agentCode}}</div>
+        </div>
+      </div>
+    </h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true"><i class="material-icons">close</i></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm" (ngSubmit)="onEditSave(editForm)">
+      <div class="input-field col s12 d-none">
+        <input formControlName="id" class="form-control" type="hidden">
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" placeholder="First name" formControlName="name"
+            required>
+          <small class="form-text text-danger"
+            *ngIf="!editForm.get('name')?.valid && editForm.get('name')?.touched"> First name is
+            required</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+          <label>Phone<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" placeholder="Phone" formControlName="phone" required>
+          <small class="form-text text-danger"
+            *ngIf="!editForm.get('phone')?.valid && editForm.get('phone')?.touched"> Phone is
+            required</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Email<span class="text-danger">*</span></label>
+          <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+          <small class="form-text text-danger"
+            *ngIf="!editForm.get('email')?.valid && editForm.get('email')?.touched"> Please enter a valid
+            email address</small>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+          <label>Status <span class="text-danger">*</span></label>
+          <select class="form-select form-control" formControlName="status" required>
+            <option value="" selected disabled>Please select</option>
+            <option *ngFor="let status of statusType" [value]="status.value">
+              {{status.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <label>Address<span class="text-danger"></span></label>
+          <textarea type="textarea" class="form-control" placeholder="Address"
+            formControlName="address"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Save</button>
+        <button type="button" class="btn btn-light" (click)="modal.close()">Close</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
